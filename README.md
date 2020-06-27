@@ -1,10 +1,12 @@
+# Use with custom create-react-app-workspace-version
+
+```
+yarn create react-app --scripts-version @goolyuyi/react-scripts myapp
+```
+
 # :warning: WARNING!
 
 This is a custom scripts-version of React-Scripts that provides Monorepo support.
-
-See [React Workspaces Playground](https://github.com/react-workspaces/react-workspaces-playground) for a working demo.
-
-[![React Workspaces Playground Screenshots](https://i.imgur.com/7snWXD0.png)](https://github.com/react-workspaces/react-workspaces-playground)
 
 For more information on why this was created, please read this for more info: [Support Lerna and/or Yarn Workspaces #1333](https://github.com/facebook/create-react-app/issues/1333)
 
