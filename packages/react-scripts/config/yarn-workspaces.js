@@ -42,16 +42,13 @@ const getWorkspacesRootConfig = dir => {
 const getPackagePaths = (root, workspacesList) => {
   const packageList = [];
 
-  workspacesList.forEach(workspace => {
-    const workspaceDir = path.dirname(workspace);
-    const workspaceAbsDir = path.join(root, workspaceDir);
-    const packageJsonGlob = path.join('**!(node_modules)', 'package.json');
-    const packageJsonAbsPaths = glob
-      .sync(packageJsonGlob, { cwd: workspaceAbsDir })
-      .map(pkgPath => path.join(workspaceAbsDir, pkgPath));
+  const workspaceAbsDir = path.join(root);
+  const packageJsonGlob = path.join('**!(node_modules)', 'package.json');
+  const packageJsonAbsPaths = glob
+    .sync(packageJsonGlob, { cwd: workspaceAbsDir })
+    .map(pkgPath => path.join(workspaceAbsDir, pkgPath));
 
-    packageList.push(...packageJsonAbsPaths);
-  });
+  packageList.push(...packageJsonAbsPaths);
 
   return packageList;
 };
